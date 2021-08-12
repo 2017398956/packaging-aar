@@ -1,0 +1,43 @@
+plugins {
+    id 'groovy'
+    id 'java-library'
+    id 'kotlin'
+//    id 'com.android.library'
+//    id 'kotlin-android'
+    id 'maven-publish'
+}
+
+dependencies {
+    // gradle sdk
+    implementation gradleApi()
+    // groovy sdk
+    implementation localGroovy()
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation 'com.android.tools.build:gradle:7.0.0'
+    implementation 'com.android.tools:common:30.0.0'
+    implementation "org.javassist:javassist:3.27.0-GA"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = 'personal.nfl.packaging.aar'
+version = '1.0'
+
+publishing {
+    publications {
+        myLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'packaging-aar'
+            // url = layout.buildDirectory.dir("repo")
+            url = "../repo"
+        }
+    }
+}

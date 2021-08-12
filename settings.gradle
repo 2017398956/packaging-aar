@@ -1,0 +1,3 @@
+rootProject.name = "packaging-aar"
+include ':packaging-aar'
+include ':app'
