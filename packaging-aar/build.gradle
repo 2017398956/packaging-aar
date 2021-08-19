@@ -15,7 +15,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation 'com.android.tools.build:gradle:7.0.0'
     implementation 'com.android.tools:common:30.0.0'
-    implementation "org.javassist:javassist:3.27.0-GA"
+    implementation 'org.javassist:javassist:3.28.0-GA'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
